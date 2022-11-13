@@ -5,7 +5,7 @@
 
 Contact: Paul Julian ([email](mailto:pauljulianphd@gmail.com))
 
-## Big Wondermere Survey
+## Big Windermere Survey
 
 The Freshwater Biological Association (FBA) and Lancaster University
 kicked off a new citizen (community) science project on Windermere
