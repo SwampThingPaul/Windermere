@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Windermere Hotspot</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Julian" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link rel="stylesheet" href="libs/custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+layout: true
+
+---
+name: title
+class: left, middle
+
+### The Big Windermere Survey 
+
+June 2022 Geospatial Evaluation - DRAFT
+
+November 13, 2022
+
+
+&lt;!-- this ends up being the title slide since seal = FALSE--&gt;
+
+
+.footnote[
+Paul Julian PhD [<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>](mailto: pauljulianphdn@gmail.com) .small[pauljulianphdn@gmail.com]
+
+.small[Use cursor keys for navigation, press .red["O"] for a slide .red[O]verview]
+
+]
+
+---
+name: objectives
+
+## Objective(s)/Goal(s)
+
+* Evaluate the Big Windermere Survey data using geostatistical techniques to understand variability in water quality spatially and temporally (relative to each survey sampling). 
+
+## Methods
+
+* Evaluate each synoptic survey sampling using the Getis-Ord hotspot statistic
+  * This method provides information on local spatial structures and can identify areas of high (or low) clustering&lt;sup&gt;1,2&lt;/sup&gt;.
+  * Negative _G_ values indicate "cold spots" (values lower than expected relative to the "global" dataset)
+  * Positive _G_ values indicate "hot spots" (values higher than expected)
+
+.small[
+* Initial Parameters:
+  * [Total Phosphorus](#TP)
+  * [Nitrate-Nitrite (total oxidizable Nitrogen)](#NOx)
+  * Microbiological ([Total Coliforms](#TCol), [E. coli](#Ecol), [Enterococcus](#entro))
+]
+  
+.footnote[
+.small[
+[1] Getis, Arthur, and J. K. Ord. 2010. “The Analysis of Spatial Association by Use of Distance Statistics.” Geographical Analysis 24 (3): 189–206. [link](https://doi.org/10.1111/j.1538-4632.1992.tb00261.x.)
+
+[2] Hot Spot Analysis - Geospatial data analysis in #rstats [Link](https://swampthingecology.org/blog/hot-spot-analysis-geospatial-data-analysis-in-rstats.-part-3/)
+]
+]
+
+---
+name: TP
+
+## Total Phosphorus 
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_TPBoxplot.png" alt="Boxplot of total phosphorus concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Boxplot of total phosphorus concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: TP2
+
+## Total Phosphorus 
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_TPBubble.png" alt="Bubble map of total phosphorus concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Bubble map of total phosphorus concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: TP3
+
+## Total Phosphorus 
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_TPHotspot.png" alt="Hotspot analysis of total phosphorus concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Hotspot analysis of total phosphorus concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: NOx
+
+## Nitrate-Nitrite (NOx)
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_NOxBoxplot.png" alt="Boxplot of nitrate-nitrite concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Boxplot of nitrate-nitrite concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: NOx2
+
+## Nitrate-Nitrite (NOx)
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_NOxBubble.png" alt="Bubble map of nitrate-nitrite concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Bubble map of nitrate-nitrite concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: NOx3
+
+## Nitrate-Nitrite (NOx)
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_NOxHotspot.png" alt="Hotspot analysis of nitrate-nitrite concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Hotspot analysis of nitrate-nitrite concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: TCol
+
+## Total Coliforms
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_TColiformsBoxplot.png" alt="Boxplot of total coliforms concentrations across waterbodies. (Note: y-axis in log scale)" width="85%" /&gt;
+&lt;p class="caption"&gt;Boxplot of total coliforms concentrations across waterbodies. (Note: y-axis in log scale)&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: TCol2
+
+## Total Coliforms
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_TColiformsBubble.png" alt="Bubble map of total coliforms concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Bubble map of total coliforms concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: TCol3
+
+## Total Coliforms
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_TColiformsHotspot.png" alt="Hotspot analysis of total coliforms concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Hotspot analysis of total coliforms concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: Ecol
+
+## E. Coli
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_EcoliBoxplot.png" alt="Boxplot of E. coli concentrations across waterbodies.(Note: y-axis in log scale)" width="85%" /&gt;
+&lt;p class="caption"&gt;Boxplot of E. coli concentrations across waterbodies.(Note: y-axis in log scale)&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: Ecol2
+
+## E. Coli
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_EcoliBubble.png" alt="Bubble map of E. coli concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Bubble map of E. coli concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: Ecol3
+
+## E. Coli
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_EcoliHotspot.png" alt="Hotspot analysis of E. coli concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Hotspot analysis of E. coli concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: entro
+
+## Enterococcus
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_EnteroBoxplot.png" alt="Boxplot of Enterococcus concentrations across waterbodies.(Note: y-axis in log scale)" width="85%" /&gt;
+&lt;p class="caption"&gt;Boxplot of Enterococcus concentrations across waterbodies.(Note: y-axis in log scale)&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: entro2
+
+## Enterococcus
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_EnteroBubble.png" alt="Bubble map of Enterococcus concentrations across waterbodies." width="85%" /&gt;
+&lt;p class="caption"&gt;Bubble map of Enterococcus concentrations across waterbodies.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+name: entro3
+
+## Enterococcus
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_EnteroHotspot.png" alt="Hotspot analysis of Enterococcus concentrations across waterbodies. (Note: y-axis in log scale)" width="85%" /&gt;
+&lt;p class="caption"&gt;Hotspot analysis of Enterococcus concentrations across waterbodies. (Note: y-axis in log scale)&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+name: con
+
+## Preliminary Conclusions
+
+* TP significantly lower (i.e. cold spot) throughout the majority of Lake Windermere, hotspot located at Leven monitoring location
+* NOx hotspot throughout Lake Windermere, coldspots northern of Windermere
+* (No Hotspot analysis) Dissolved silica concentrations are relative low in Windermere - [bubble plot](#extra1)
+  * Potential link to algae growth dynamics
+* Total Coliforms spatial distribution is variable throughout the survey with some hotspots detected amongst coldspots in Windermere
+* E. coli less extreme with smaller hot and cold spots across the survey
+* Enterococcus is lower in Windermere than other area. 
+
+* Next step - further evaluation of June survey and wait for next survey results. 
+  * Evaluate nutrient stoichiometry (SRP:NOx, SRP:Si, NOx:Si) - relevant to algae dynamics   
+  
+
+
+
+---
+name: extra1
+
+## Dissolved Silica
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./plots/202206_SiBubble.png" alt="Bubble map of dissolved silica concentrations across waterbodies" width="85%" /&gt;
+&lt;p class="caption"&gt;Bubble map of dissolved silica concentrations across waterbodies&lt;/p&gt;
+&lt;/div&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current%",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
