@@ -16,3 +16,6 @@ kicked off a new citizen (community) science project on Windermere
 Using the citizen collected data, this analysis will evaluate potential
 cold/hot spots in indicator parameters during the entire survey period
 and individual sampling events.
+
+-   June 2022 Survey - Exploratory Analysis
+    [Link](https://swampthingecology.org/Windermere/slides/202206_Survey_WindermereHotSpot#1)
